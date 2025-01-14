@@ -20,7 +20,6 @@ Game::~Game() {
     cout << "GAME DESTRUCTOR: object cleared from stack memory" << endl;
 }
 
-
 void Game::play() {
     while (playerGuess != randomNum) {
         cout << "Guess a randomly generated number: ";
