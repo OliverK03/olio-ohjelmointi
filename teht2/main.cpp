@@ -1,9 +1,13 @@
 #include <iostream>
+#include "game.h"
 
-using namespace std;
+int main() {
+    int maxNumber;
+    std::cout << "Enter the maximum number for the game: ";
+    std::cin >> maxNumber;
 
-int main()
-{
-    cout << "Hello World!" << endl;
+    Game game(maxNumber);
+    game.play();
+
     return 0;
 }
