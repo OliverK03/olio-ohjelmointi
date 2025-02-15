@@ -37,19 +37,19 @@ Toteuta viikkotehtävän 1 mukainen arvauspeli nyt oliopohjaisesti.
 Tässä tehtävässä harjoitellaan perintää kahden luokan avulla:
 
 1. Chef-luokka:
-    Konstruktori ottaa parametrinä kokin nimen.
-    Jäsenfunktiot makeSalad(int ingredients) ja makeSoup(int ingredients), jotka palauttavat valmistettujen annosten määrän.
-        Salaatti: 1 annos = 5 ainesta
-        Keitto: 1 annos = 3 ainesta
-Kaikki metodit, konstruktori ja destruktori tulostavat debug-tietoa.
+    - Konstruktori ottaa parametrinä kokin nimen.
+    - Jäsenfunktiot makeSalad(int ingredients) ja makeSoup(int ingredients), jotka palauttavat valmistettujen annosten määrän.
+        - Salaatti: 1 annos = 5 ainesta
+        - Keitto: 1 annos = 3 ainesta
+    - Kaikki metodit, konstruktori ja destruktori tulostavat debug-tietoa.
 
 2. ItalianChef-luokka (perii Chef-luokan):
-    Lisää jäsenmuuttujan salasanalle (password = "pizza").
-    Jäsenfunktio askSecret(string givenPassword, int flour, int water):
-        Tarkistaa, onko salasana oikein.
-        Jos oikein, kutsuu makePizza(int flour, int water).
-    makePizza (privaatti):
-        1 pizza = 5 jauhoa + 5 vettä.
-        Palauttaa valmistettujen pizzojen määrän.
+    - Lisää jäsenmuuttujan salasanalle (password = "pizza").
+    - Jäsenfunktio askSecret(string givenPassword, int flour, int water):
+        - Tarkistaa, onko salasana oikein.
+        - Jos oikein, kutsuu makePizza(int flour, int water).
+    - makePizza (privaatti):
+        - 1 pizza = 5 jauhoa + 5 vettä.
+        - Palauttaa valmistettujen pizzojen määrän.
 
 Tavoitteena on toteuttaa luokat annettujen määrittelyjen mukaan ja varmistaa, että perintä toimii oikein.
