@@ -1,31 +1,31 @@
-### Olio-ohjelmointi
+# Olio-ohjelmointi
 Object-Oriented Programming (OOP) course in Oulu University of Applied Science
 
 ## Tehtävä 1
 
 Tässä tehtävässä toteutetaan numeroarvauspeli, jossa pelaajan tulee arvata tietokoneen arpoma satunnainen luku.
 
-# 1. Perusversio (main-funktiossa)
+### 1. Perusversio (main-funktiossa)
     - Arvotaan satunnainen luku väliltä 1-20.
     - Pyydetään pelaajalta arvaus.
     - Ilmoitetaan, onko arvaus pienempi, suurempi tai oikea.
     - Toistetaan, kunnes pelaaja arvaa oikein.
 
-# 2. Funktiointiin siirtäminen
+### 2. Funktiointiin siirtäminen
     - Siirretään pelilogiikka omaan funktioonsa:
 
     `int game();`
 
     - Lasketaan arvausten määrä ja palautetaan se pääohjelmaan.
 
-# 3. Parametrisoitu versio
+### 3. Parametrisoitu versio
     - Lisätään funktiolle parametri maxnum, joka määrittää suurimman arvottavan luvun:
 
     `int game(int maxnum);`
     
     - Pääohjelmassa tulostetaan pelin loputtua arvausten määrä.
 
-# Muut huomioitavat asiat
+#### Muut huomioitavat asiat
     - Käytetään satunnaislukugeneraattoria (cstdlib ja ctime).
     - Arvottu luku saadaan rajoitettua modulo-operaattorilla.
     - Tulostetaan debug-tietoa ohjelman toiminnan varmistamiseksi.
@@ -37,14 +37,14 @@ Toteuta viikkotehtävän 1 mukainen arvauspeli nyt oliopohjaisesti.
 
 **Tässä tehtävässä harjoitellaan perintää kahden luokan avulla:** 
 
-# 1. Chef-luokka:
+### 1. Chef-luokka:
     - Konstruktori ottaa parametrinä kokin nimen.
     - Jäsenfunktiot makeSalad(int ingredients) ja makeSoup(int ingredients), jotka palauttavat valmistettujen annosten määrän.
         - Salaatti: 1 annos = 5 ainesta
         - Keitto: 1 annos = 3 ainesta
     - Kaikki metodit, konstruktori ja destruktori tulostavat debug-tietoa.
 
-# 2. ItalianChef-luokka (perii Chef-luokan):
+### 2. ItalianChef-luokka (perii Chef-luokan):
     - Lisää jäsenmuuttujan salasanalle (password = "pizza").
     - Jäsenfunktio askSecret(string givenPassword, int flour, int water):
         - Tarkistaa, onko salasana oikein.
