@@ -128,6 +128,82 @@ int game(int maxnum);
 ### 1. Seuraaja-luokka ( ```Seuraaja ```)
 -  ```string nimi ``` - Seuraajan nimi.
 -  ```Seuraaja* next ``` - Osoitin seuraavaan seuraajaan (käytetään linkitetyn listan rakentamiseen).
--  Konstruktori - Asettaa seuraajan nimen ja alustaa next = nullptr.
+-  Konstruktori - Asettaa seuraajan nimen ja alustaa  ```next = nullptr ```.
 -  ```paivitys(string viesti) ``` - Tulostaa viestin konsolille ("[nimi] sai viestin: [viesti]").
-getNimi() – Palauttaa seuraajan nimen.
+-  ```getNimi() ``` - Palauttaa seuraajan nimen.
+
+### 2. Notifikaattori-luokka (```Notifikaattori```)
+- ```Seuraaja* alku``` - Osoitin listan ensimmäiseen seuraajaan.
+- Konstruktori - Alustaa ```alku = nullptr```.
+- ```void lisaa(Seuraaja* uusi)``` - Lisää uuden seuraajan listan alkuun.
+- ```void poista(string nimi)``` - Poistaa tietyn nimisen seuraajan listalta.
+- ```void tulosta()``` - Tulostaa kaikkien seuraajien nimet.
+- ```void postita(string viesti)``` - Lähettää viestin kaikille seuraajille kutsumalla ```paivitys()```-funktiota.
+
+### 3. Linkitetyn listan käsittely
+
+#### Lisäys (```lisaa()```)
+1. Asetetaan uuden seuraajan ```next``` osoittamaan nykyiseen alkuun.
+2. Päivitetään ```alku``` osoittamaan uuteen seuraajaan.
+    - Ennen: ```alku -> B```
+    - Lisätään A: ```A -> B``` ja ```alku = A```
+
+#### Poisto (```poista()```)
+1. Etsitään poistettava seuraaja.
+2. Jos löytyy, päivitetään edellisen ```next``` osoittamaan seuraajan ```next```.
+    - Ennen: ```A -> B -> C```
+    - Poistetaan B: ```A -> C``` (B ohitetaan)
+
+####Listan läpikäynti (```tulosta()``` ja ```postita()```)
+- ```while (o != nullptr)```
+    - Käydään lista läpi ```next```-osoittimen avulla, kunnes saavutetaan ```nullptr```.
+
+
+### 4. Ohjelman tiedostorakenne
+- ```Seuraaja.h``` - Seuraaja-luokan määrittely ja toteutus.
+- ```Notifikaattori.h```  - Notifikaattori-luokan määrittely ja toteutus.
+- ```main.cpp```  Luo Notifikaattori-olion, lisää seuraajia, poistaa heitä ja testaa viestien lähettämistä.
+
+## Tehtävä 6
+
+**Tehtävässä hyödynnetään C++ standardikirjastoa (`vector`, `algorithm`, `string`) opiskelijoiden hallintaan**
+**Tavoitteena harjoitella C++ standardikirjaston käyttöä ja tietorakenteita (`vector`, `algorithm`).**
+
+### Tehtävän Ydinasiat
+
+1. `Student`-luokka
+    - Jäsenmuuttujat: `name (string)`, `age (int)`.
+    - Getterit & setterit (`getName()`, `getAge()`, `setName()`, `setAge()`).
+    - `printStudentInfo()` - Tulostaa opiskelijan tiedot.
+2. Pääohjelma (`main.cpp`)
+    - Valikko: Käyttäjä voi lisätä, tulostaa, järjestää ja etsiä opiskelijoita.
+    - Tiedot tallennetaan `vector<Student>`-listaan.
+    - `algorithm`-kirjaston funktiot (`sort()`, `find_if()`) käytössä.
+
+### Pääohjelman Valinnat
+
+| **Valinta** | **Toiminto** |
+|:------------:|:-------------:|
+| **0** | Lisää opiskelija `vector<Student>`-listaan. |
+| **1** | Tulostaa kaikki opiskelijat. |
+| **2** | Järjestää ja tulostaa opiskelijat **nimen** mukaan (`sort()`). |
+| **3** | Järjestää ja tulostaa opiskelijat **iän** mukaan (`sort()`). |
+| **4** | Etsii opiskelijaa nimellä (`find_if()`). |
+
+### Keskeiset C++ Standardikirjaston Käytöt
+1. `vector<Stduent>`
+    - `push_back()` - Lisää opiskelijoita listaan.
+    - `begin()` / `end()` - Käytetään `find_if()`- ja `sort()`-funktioissa.
+2. `sort()` (`algorithm`)
+
+    - Lambda-funktiota hyödyntäen:
+```cpp
+sort(studentList.begin(), studentList.end(), 
+    [](const Student& a, const Student& b) { return a.getName() < b.getName(); });
+```
+3. `find_if()` (`algorithm`)
+    - Käytetään opiskelijan hakemiseen nimen perusteella:
+```cpp
+auto it = find_if(studentList.begin(), studentList.end(), 
+    [&name](const Student& student) { return student.getName() == name; });
+```
