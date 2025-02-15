@@ -154,7 +154,7 @@ int game(int maxnum);
     - Ennen: ```A -> B -> C```
     - Poistetaan B: ```A -> C``` (B ohitetaan)
 
-####Listan läpikäynti (```tulosta()``` ja ```postita()```)
+#### Listan läpikäynti (```tulosta()``` ja ```postita()```)
 - ```while (o != nullptr)```
     - Käydään lista läpi ```next```-osoittimen avulla, kunnes saavutetaan ```nullptr```.
 
