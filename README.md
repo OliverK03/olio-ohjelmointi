@@ -183,7 +183,7 @@ int game(int maxnum);
 ### Pääohjelman Valinnat
 
 | **Valinta** | **Toiminto** |
-|:------------:|-------------|
+|:------------:|:-------------|
 | **0** | Lisää opiskelija `vector<Student>`-listaan. |
 | **1** | Tulostaa kaikki opiskelijat. |
 | **2** | Järjestää ja tulostaa opiskelijat **nimen** mukaan (`sort()`). |
