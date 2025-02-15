@@ -35,7 +35,29 @@ int game(int maxnum);
 - Tulostetaan debug-tietoa ohjelman toiminnan varmistamiseksi.
 
 ## Tehtävä 2
-Toteuta viikkotehtävän 1 mukainen arvauspeli nyt oliopohjaisesti. 
+
+**Tässä tehtävässä Tässä tehtävässä toteutetaan viikkotehtävän 1 mukainen numeroarvauspeli oliopohjaisesti käyttäen Game-luokkaa.** 
+
+### Game-luokka
+-Konstruktori:
+    - Saa parametrina ```maxNumber```, joka määrittää arvottavan luvun alueen (1 - maxNumber).
+    - Arpoo arvattavan luvun.
+    - Tulostaa debug-tietoa.
+- ```void Play()```
+    - Toteuttaa pelilogiikan (kysyy arvauksia, antaa vihjeitä).
+    - Laskee arvausten määrän.
+- ```void printGameResult()```
+    - Tulostaa oikean luvun ja arvausten määrän pelin päätyttyä.
+
+### Ohjelman tiedostorakenne
+1. ```Game.h``` - Luokan otsikkotiedosto
+2. ```Game.cpp``` - Luokan toteutustiedosto
+3. ```main.cpp``` - Luo ```Game```-olion ja käynnistää pelin
+
+
+### Lisävaatimukset
+- Debug-tulostukset konstruktoriin ja jäsenfunktioihin.
+- Testaa ohjelman toiminta varmistamalla, että peli etenee oikein.
 
 ## Tehtävä 3
 
