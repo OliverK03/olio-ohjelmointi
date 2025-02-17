@@ -207,3 +207,76 @@ sort(studentList.begin(), studentList.end(),
 auto it = find_if(studentList.begin(), studentList.end(), 
     [&name](const Student& student) { return student.getName() == name; });
 ```
+
+## Tehtävä 7
+
+**Tässä tehtävässä toteutetaan kaksi hyvin yksinkertaista Qt Widget -sovellusta, joissa on käyttöliittymät, jotka koostuu laskurista.**
+**Ensimmäisessä sovelluksessa on kaksi nappia: "Count" ja "Reset". Laskuri kasvaa joka kerta, kun "Count"-nappia painetaan, ja nollautuu, kun "Reset"-nappia painetaan.**
+
+### Tehtävän ydinasiat
+- Käyttöliittymä:
+    - `QPushButton`: "Count" ja "Reset" napit.
+    - `QLineEdit`: Kenttä, joka näyttää laskurin nykyisen arvon.
+- Toiminnallisuus:
+    - `Count`-nappi: Lisää laskurista arvon yhdellä joka kerta, kun nappia painetaan.
+    - `Reset`-nappi: Nollaa laskurin arvon.
+- Qt Widgets:
+    - Käytetään Qt:n tarjoamia komponentteja kuten `QPushButton`, `QLineEdit`, ja `QVBoxLayout` käyttöliittymän rakentamiseen.
+
+### Pääpiirteet
+- `QPushButton` nappien toiminta liitetään vastaaviin slotteihin, jotka päivittävät laskurin arvoja.
+- Käytetään `QLineEdit` komponenttia laskurin arvon näyttämiseen.
+
+**Toisessa sovelluksessa luodaan laskin-sovellus, joka mahdollistaa kahden käyttäjän syöttämän numeron laskemisen. Laskin tukee neljää perusoperaatiota: +, -, * ja /.**
+**Käyttöliittymäsä on kentät, joihin käyttäjä voi syöttää numerot ja valita operaattorin, lopputulos näytetään erilisessä kentässä.**
+
+### Tehtävän Ydinasiat
+- **Käyttöliittymä:**  
+  - `QLabel`: Tekstikentät, jotka näyttävät otsikot "Number1", "Number2", ja "Result". Nämä eivät ole vuorovaikutteisia kenttiä.
+  - `QLineEdit`: Kentät, joissa käyttäjä voi syöttää lukuja. Nämä on nimetty `num1`, `num2`, ja `result`.
+  - `QPushButton`: Nämä napit suorittavat laskutoimituksia ja tyhjentävät kentät. Nimeä napit `N0`, `N1`, `N2`, ... `N9` numeroille, ja `add`, `sub`, `mul`, `div` laskutoiminnoille sekä `clear` ja `enter` toiminnoille.
+
+- **Toiminnallisuus:**  
+  - Käyttäjä voi syöttää kaksi lukua `num1` ja `num2`.
+  - Laskutoimitukset suoritetaan nappeja painamalla ja tulos näkyy `result` kentässä.
+  - Tukitoiminnot:  
+    - `clear`: Tyhjentää kaikki kentät.
+    - `enter`: Suorittaa laskutoimituksen ja näyttää tuloksen.
+  
+- **Laskutoimitukset:**  
+  - `add` (lisäys)
+  - `sub` (vähennys)
+  - `mul` (kerto)
+  - `div` (jako)
+  - Jakamisessa käsitellään myös nolla jakajana (virhe).
+
+### Käyttöliittymän Yksityiskohdat
+- `QLabel`:  
+  - Tekstit "Number1", "Number2", "Result".
+  
+- `QLineEdit`:  
+  - `num1`: Ensimmäinen syöttökenttä numerolle 1.
+  - `num2`: Toinen syöttökenttä numerolle 2.
+  - `result`: Kenttä, johon laskutoimituksen tulos näytetään.
+
+- `QPushButton`:  
+  - `N0-N9`: Numeronäppäimet 0-9.
+  - `add`: Lisäysoperaatio (plus).
+  - `sub`: Vähennysoperaatio (miinus).
+  - `mul`: Kertolaskuoperaatio (kertomerkki).
+  - `div`: Jakolaskuoperaatio (vinoviiva).
+  - `clear`: Tyhjentää syöttökentät ja tuloksen.
+  - `enter`: Laskee valitun laskutoimituksen ja näyttää tuloksen.
+
+## Toiminnallisuus:
+- **Numerot** (`N0-N9`):  
+  Käyttäjä voi syöttää numeroita kenttään `num1` ja `num2` käyttämällä numero-nappeja.
+  
+- **Laskutoimitukset** (`add`, `sub`, `mul`, `div`):  
+  Käyttäjä voi valita laskutoimituksen (plus, miinus, kertominen tai jakaminen) ja tulos näytetään `result` kentässä.
+
+- **Clear ja Enter**:  
+  - `clear`: Tyhjentää kaikki kentät.
+  - `enter`: Suorittaa laskutoimituksen, joka on valittu, ja näyttää sen tuloksen `result` kentässä.
+
+**Tavoitteena tehtävässä on rakentaa käyttöliittymä Qt:ssa, toteuttaa peruslaskutoimituksia ja hallita käytttäjän syötteitä sekä niistä koituvia virheitä.**
