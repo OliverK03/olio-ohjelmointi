@@ -213,6 +213,8 @@ auto it = find_if(studentList.begin(), studentList.end(),
 **Tässä tehtävässä toteutetaan kaksi hyvin yksinkertaista Qt Widget -sovellusta, joissa on käyttöliittymät, jotka koostuu laskurista.**
 **Ensimmäisessä sovelluksessa on kaksi nappia: "Count" ja "Reset". Laskuri kasvaa joka kerta, kun "Count"-nappia painetaan, ja nollautuu, kun "Reset"-nappia painetaan.**
 
+**Tavoitteena tehtävässä on rakentaa käyttöliittymä Qt:ssa, toteuttaa peruslaskutoimituksia ja hallita käytttäjän syötteitä sekä niistä koituvia virheitä.**
+
 ### Tehtävän ydinasiat
 - Käyttöliittymä:
     - `QPushButton`: "Count" ja "Reset" napit.
@@ -278,5 +280,3 @@ auto it = find_if(studentList.begin(), studentList.end(),
 - **Clear ja Enter**:  
   - `clear`: Tyhjentää kaikki kentät.
   - `enter`: Suorittaa laskutoimituksen, joka on valittu, ja näyttää sen tuloksen `result` kentässä.
-
-**Tavoitteena tehtävässä on rakentaa käyttöliittymä Qt:ssa, toteuttaa peruslaskutoimituksia ja hallita käytttäjän syötteitä sekä niistä koituvia virheitä.**
