@@ -154,7 +154,7 @@ int game(int maxnum);
     - Ennen: ```A -> B -> C```
     - Poistetaan B: ```A -> C``` (B ohitetaan)
 
-#### Listan läpikäynti (```tulosta()``` ja ```postita()```)
+####Listan läpikäynti (```tulosta()``` ja ```postita()```)
 - ```while (o != nullptr)```
     - Käydään lista läpi ```next```-osoittimen avulla, kunnes saavutetaan ```nullptr```.
 
@@ -183,7 +183,7 @@ int game(int maxnum);
 ### Pääohjelman Valinnat
 
 | **Valinta** | **Toiminto** |
-|:------------:|:-------------|
+|:------------:|-------------|
 | **0** | Lisää opiskelija `vector<Student>`-listaan. |
 | **1** | Tulostaa kaikki opiskelijat. |
 | **2** | Järjestää ja tulostaa opiskelijat **nimen** mukaan (`sort()`). |
