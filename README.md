@@ -280,3 +280,52 @@ auto it = find_if(studentList.begin(), studentList.end(),
 - **Clear ja Enter**:  
   - `clear`: Tyhjentää kaikki kentät.
   - `enter`: Suorittaa laskutoimituksen, joka on valittu, ja näyttää sen tuloksen `result` kentässä.
+
+## Tehtävä 8: Shakkikello Sovellus Qt Widgets
+
+Tässä tehtävässä luodaan **Shakkikello-sovellus** käyttäen Qt Widgets -sovelluskehystä. Sovellus toimii ajastimena kahdelle pelaajalle, ja se seuraa kummankin pelaajan jäljellä olevaa peliaikaa. Käyttöliittymä näyttää molemmille pelaajille progressbarit, jotka osoittavat jäljellä olevan ajan.
+
+### Tehtävän Ydinasiat
+- **Käyttöliittymä:**  
+  - **Pelikellot:** Käyttöliittymässä on kaksi `QProgressBar`-olionkenttää, jotka näyttävät kummankin pelaajan jäljellä olevan ajan.
+  - **Painikkeet:**  
+    - **Peliajat:** Käyttäjä voi valita peliajan kahdella painikkeella.  
+    - **Start Game:** Pelin käynnistävä painike, joka käynnistää ajastimet.
+    - **Switch Player:** Vaihda pelaajaa siirron jälkeen.
+    - **End Game:** Pelin lopettaminen ja uuden pelin aloitus.
+
+- **Toiminnallisuus:**
+  - **Ajan valinta:** Käyttäjä voi valita peliajan valitsemalla yhden kahdesta vaihtoehdosta.
+  - **Pelin aloitus:** Käyttäjä voi aloittaa pelin painamalla **Start Game** -painiketta, jolloin ajastimet alkavat laskea.
+  - **Siirron vaihto:** Pelaaja 1 painaa **Switch Player** -painiketta siirtonsa jälkeen, jolloin ajastin vaihtuu pelaajalle 2.
+  - **Ajan loppuminen:** Jos jommankin pelaajan aika loppuu (0 sekuntia), peli päättyy ja käyttäjä kehotetaan aloittamaan uusi peli.
+
+### Käyttöliittymän Yksityiskohdat
+- **QProgressBar:**  
+  - `Player 1 ProgressBar`: Näyttää pelaaja 1:n jäljellä olevan ajan.
+  - `Player 2 ProgressBar`: Näyttää pelaaja 2:n jäljellä olevan ajan.
+
+- **QPushButton:**  
+  - `Select Time 1`: Valitse ensimmäinen peliaika.
+  - `Select Time 2`: Valitse toinen peliaika.
+  - `Start Game`: Käynnistää pelin ja aloittaa ajastimet.
+  - `Switch Player`: Vaihda pelaajaa siirron jälkeen.
+  - `End Game`: Lopettaa pelin ja aloittaa uuden pelin.
+
+### Toiminnallisuus
+- **Peliajat valitseminen:** Käyttäjä voi valita kahdesta vaihtoehdosta peliajan.
+- **Pelin ajastaminen:**  
+  - Kun peli käynnistetään, pelaaja 1:n aika alkaa kulua.
+  - Kun pelaaja 1 on valmis ja painaa **Switch Player** -painiketta, ajastin siirtyy pelaaja 2:lle.
+- **Ajan loppuminen:**  
+  - Jos pelaajan aika loppuu, peli päättyy ja käyttäjä voi aloittaa uuden pelin.
+
+### Tavoitteet
+- **Harjoitellaan Qt:n käyttöliittymäkomponenttien hallintaa** (`QProgressBar`, `QPushButton`).
+- **Pelin logiikan toteuttaminen ajastimien ja pelaajasiirtojen kanssa.**
+- **Ajan hallinta ja virheenkäsittely pelissä.**
+
+### Kuva Projektista
+
+```markdown
+![Shakkikello Sovellus](teht8/ChessClock.png)
