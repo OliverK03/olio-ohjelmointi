@@ -327,5 +327,4 @@ Tässä tehtävässä luodaan **Shakkikello-sovellus** käyttäen Qt Widgets -so
 
 ### Kuva Projektista
 
-```markdown
 ![Shakkikello Sovellus](teht8/ChessClock.png)
